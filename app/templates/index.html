@@ -1,1 +1,85 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Gas-Chapp</title>
+    {% endif %}
+</head>
+<body>
+
+
+    
+   <div class="container-fluid futa">
+       <footer>
+           <h1>Get Intouch With Us</h1>
+           <center><hr></center>
+           <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-3 demo-solution--flexbox">
+                     <img src="https://img.icons8.com/bubbles/2x/facebook-new.png" alt="">
+                <span>Gas-ChappKenya</span>
+                </div>
+                <div class="col-md-3 demo-solution--flexbox"> <img src="https://help.twitter.com/content/dam/help-twitter/brand/logo.png" alt="">
+                    <span>Gas-ChappKenya</span></div>
+                <div class="col-md-3 demo-solution--flexbox"> <img src="https://icon-library.net/images/instagram-icon-png-transparent-background/instagram-icon-png-transparent-background-2.jpg" alt="">
+                    <span>Gas-ChappKenya</span></div>
+                <div class="col-md-1"></div>
+             </div>
+             <br>
+             <p>Copyright &copy; Gas-Chapp 2019</p>
+             <br><br>
+       </footer>
+   </div>
+</body>
+</html>
+<style>
+    *{
+        margin: 0px;
+        padding: 0px;
+    }
+    h1{
+        text-align: center;
+    }
+
+    .futa{
+        background-image: url('https://res.cloudinary.com/glovoapp/image/fetch///https://glovoapp.com/images/svg/curve.svg')
+    }
+
+    .futa hr{
+        width:10%;
+        border-top: 1px solid #fde0a2;
+    }
+
+    .demo-solution--flexbox {
+    display: flex;
+    align-items: center;
+    padding: 15px 8px;
+}
+
+.demo-solution--flexbox span {
+    padding-left: 10px;
+    font-family: Lato;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 16px !important;
+}
+
+.demo-solution--flexbox img{
+
+width: 25%;
+
+}
+
+.futa p{
+    text-align: center;
+
+}
+
+
+</style>
