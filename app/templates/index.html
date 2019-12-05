@@ -1,1 +1,18 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a class="btn btn-outline-danger" href="{{url_for('vendor.register')}}">Register</a>
+    <a class="btn btn-outline-danger" href="{{url_for('vendor.login')}}">Log in</a>
+    <a class="btn btn-outline-danger" href="{{url_for('auth.signin')}}">Sign in</a>
+    <a class="btn btn-outline-danger" href="{{url_for('auth.signout')}}">Sign out</a>
+    <a href="{{url_for('main.profile',uname=current_user.username)}}">View profile</a>
+    
+    
+</body>
+</html>
