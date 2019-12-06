@@ -93,6 +93,15 @@ class Vendor(UserMixin,db.Model):
     def __repr__(self):
           return f'Vendor{self.username}'
         
+class Cart(db.Model):
+    '''Cart model'''
+    
+    __tablename__ = 'carts'
+    id = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(25), nullable=False)
+    price = db.Column(db.String(), nullable=False)
+    
+        
 @login_manager.user_loader
 
 def load_user(user_id):
@@ -101,9 +110,3 @@ def load_user(user_id):
   function that queries the database to check if user exists
   '''
   return Vendor.query.get(int(user_id))
-
-      
-    
-    
-    
-    

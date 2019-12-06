@@ -1,18 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <a class="btn btn-outline-danger" href="{{url_for('vendor.register')}}">Register</a>
-    <a class="btn btn-outline-danger" href="{{url_for('vendor.login')}}">Log in</a>
-    <a class="btn btn-outline-danger" href="{{url_for('auth.signin')}}">Sign in</a>
-    <a class="btn btn-outline-danger" href="{{url_for('auth.signout')}}">Sign out</a>
-    <a href="{{url_for('main.profile',uname=current_user.username)}}">View profile</a>
-    
-    
+{%extends 'base.html'%}
+{%block content%}
+    <div class="container">
+
+        <section class="section-a">
+            <div>
+                <h1>Gas Chapp</h1>
+                <p>
+                    Out of gas?No need to worry. Order from the comfort of your home and we will deliver it in minutes!<br><br>
+
+                    <button type="button" class="btn btn-warning btn-lg text-white"><a href="auth/login">Make an order</a></button>
+
+                </p>
+            </div>
+            <img src="https://www.flogas.ie/assets/components/mor/General/img/InnerWideCylinders.jpg" alt="" />
+
+
+        </section>
+    </div>
+{%endblock%}
+
+
+
+
+
+
+
+
+
+
 </body>
+
 </html>
