@@ -1,5 +1,6 @@
 from . import main
-from flask import render_template
+from flask import render_template,flash,redirect,url_for
+from .forms import LocationForm
 
 
 orders = [
@@ -32,6 +33,15 @@ def order():
     return render_template('order.html', title=title, orders=orders)
 
 
+
+@main.route('/location',methods=['GET','POST'])
+def location():
+    form = LocationForm()
+    if form.validate_on_submit():
+        flash(f'Thanks for Buying The gas will be delivered to {form.location.data}!', 'success')
+        return redirect(url_for('main.order'))
+    return render_template('buy.html', form=form)
+  
 
 
     
