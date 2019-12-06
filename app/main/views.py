@@ -59,7 +59,7 @@ def update_profile(uname):
 
     return render_template('profile/update.html',form =form)
   
-  @main.route('/order')
+@main.route('/order')
 def order():
     title = 'Gas-Chapp'
     return render_template('order.html', title=title, orders=orders)
@@ -70,8 +70,8 @@ def order():
 def location():
     form = LocationForm()
     if form.validate_on_submit():
-        flash(f'Thanks for Buying The gas will be delivered to {form.location.data}!', 'success')
-        return redirect(url_for('main.order'))
+        flash(f'Thanks for Buying The gas will be delivered to {form.location.data} in 5 minutes!', 'success')
+        return redirect(url_for('main.index'))
     return render_template('buy.html', form=form)
   
 

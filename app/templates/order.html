@@ -1,137 +1,26 @@
+{%extends 'base.html'%}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    {% if title %}
-    <title>{{ title }}</title>
-    {% else %}
-    <title>Gas-Chapp</title>
-    {% endif %}
-</head>
-
-<body>
-    <div class="container order">
-        <h1>order</h1>
-        <div class="row">
-
-            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/afrigas-13kg-200x258.jpg"
-                    alt="">
-
-                <center>
-                    <p>Petrol station Refill</p>
-                    <p>Ksh 2500</p>
-                    <p>13kg</p>
-                    <a href="location"> <button type="button" class="btn btn-primary">Add to cart</button></a>
-                </center>
-            </div>
-            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/04/progas-6kg-200x258.jpg"
-                    alt="">
-
-                <center>
-                    <p>Waithaka station Refill</p>
-                    <p>Ksh 1500</p>
-                    <p>6kg</p>
-                    <a href="location"> <button type="button" class="btn btn-primary">Add to cart</button></a>
-                </center>
-            </div>
-            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/kgas-13kg-200x258.jpg"
-                    alt="">
-                <center>
-                    <p>Nuru station Refill</p>
-                    <p>Ksh 1000</p>
-                    <p>13kg</p>
-                    <a href="location"> <button type="button" class="btn btn-primary">Add to cart</button></a>
-                </center>
-            </div>
-            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/afrigas-13kg-200x258.jpg"
-                    alt="">
-                <center>
-                    <p>Angaza station Refill</p>
-                    <p>Ksh 1400</p>
-                    <p>6kg</p>
-                    <a href="location"> <button type="button" class="btn btn-primary">Add to cart</button></a>
-                </center>
-            </div>
-
-            <!---- add more gases
-
-            -->
-
-            <br><br>
-
-            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/total-13kg-200x200.jpg"
-                    alt="">
-
-                <center>
-                    <p>Kenol Petrol station Refill</p>
-                    <p>Ksh 2500</p>
-                    <p>13kg</p>
-                    <a href="location"> <button type="button" class="btn btn-primary">Add to cart</button></a>
-                </center>
-            </div>
-            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/mpishi-13kg-200x258.jpg"
-                    alt="location">
-
-                <center>
-                    <p>Dean Refill</p>
-                    <p>Ksh 1500</p>
-                    <p>6kg</p>
-                    <a href="location"> <button type="button" class="btn btn-primary">Add to cart</button></a>
-                </center>
-            </div>
-            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/afrigas-13kg-200x258.jpg"
-                    alt="">
-                <center>
-                    <p>Morish Refill</p>
-                    <p>Ksh 1000</p>
-                    <p>13kg</p>
-                    <a href="location"> <button type="button" class="btn btn-primary">Add to cart</button></a>
-                </center>
-            </div>
-            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/afrigas-13kg-200x258.jpg"
-                    alt="">
-                <center>
-                    <p>Wabebe station Refill</p>
-                    <p>Ksh 1400</p>
-                    <p>6kg</p>
-                    <a href="location"> <button type="button" class="btn btn-primary">Add to cart</button></a>
-                </center>
-            </div>
-
-            <div>
-
-
-            </div>
-
-
-
-            <!---</div>
-{% for order in orders %}
-<orders class="media content-section">
-        <div class="media-body">
-          <div class="orders-metadata">
-            <a class="mr-2" href="#">{{ order.vendor }}</a>
-            <small class="text-muted"></small>
-          </div>
-          <h2><a class="orders-title"><img src="https://gobeba.com/wp-content/uploads/2019/03/afrigas-13kg-200x258.jpg" alt=""></a></h2>
-          <p class="orders-content">Price:{{order.location }}</p>
-          <button type="button" class="btn btn-primary">Buy Now</button>
-        </div>
-      </orders>
-
-
-{% endfor %}
-</body>
-</html>
-
------>
-
-            <style>
+        {%- block head %}
+        {% block title %}
+                {% if title %}
+                <title>{{ title }}</title>
+                {% else %}
+                <title>Gas-Chapp</title>
+                {% endif %}
+            {% endblock title %}
+    
+        {%- block metas %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        {%- endblock metas %}
+    
+        {%- block styles %}
+        <!-- Bootstrap -->
+        {{super()}}
+        <style>
                 h1 {
                     text-align: center;
                 }
@@ -203,6 +92,102 @@
                     margin-bottom: 15px;
                 }
             </style>
-            
-        </body>
-        </html>
+        {%- endblock styles %}
+        {%- endblock head %}
+   
+{%block content%}
+<body>
+    <div class="container order">
+        <h1>order</h1>
+        <div class="row">
+
+            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/afrigas-13kg-200x258.jpg"
+                    alt="">
+
+                <center>
+                    <p>Petrol station Refill</p>
+                    <p>Ksh 2500</p>
+                    <p>13kg</p>
+                    <a href="location"> <button type="button" class="btn btn-primary">Order Now</button></a>
+                </center>
+            </div>
+            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/04/progas-6kg-200x258.jpg"
+                    alt="">
+
+                <center>
+                    <p>Waithaka station Refill</p>
+                    <p>Ksh 1500</p>
+                    <p>6kg</p>
+                    <a href="location"> <button type="button" class="btn btn-primary">Order Now</button></a>
+                </center>
+            </div>
+            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/kgas-13kg-200x258.jpg"
+                    alt="">
+                <center>
+                    <p>Nuru station Refill</p>
+                    <p>Ksh 1000</p>
+                    <p>13kg</p>
+                    <a href="location"> <button type="button" class="btn btn-primary">Order Now</button></a>
+                </center>
+            </div>
+            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/afrigas-13kg-200x258.jpg"
+                    alt="">
+                <center>
+                    <p>Angaza station Refill</p>
+                    <p>Ksh 1400</p>
+                    <p>6kg</p>
+                    <a href="location"> <button type="button" class="btn btn-primary">Order Now</button></a>
+                </center>
+            </div>
+
+            <!---- add more gases
+
+            -->
+
+            <br><br>
+
+            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/total-13kg-200x200.jpg"
+                    alt="">
+
+                <center>
+                    <p>Kenol Petrol station Refill</p>
+                    <p>Ksh 2500</p>
+                    <p>13kg</p>
+                    <a href="location"> <button type="button" class="btn btn-primary">Order Now</button></a>
+                </center>
+            </div>
+            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/mpishi-13kg-200x258.jpg"
+                    alt="location">
+
+                <center>
+                    <p>Dean Refill</p>
+                    <p>Ksh 1500</p>
+                    <p>6kg</p>
+                    <a href="location"> <button type="button" class="btn btn-primary">Order Now</button></a>
+                </center>
+            </div>
+            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/afrigas-13kg-200x258.jpg"
+                    alt="">
+                <center>
+                    <p>Morish Refill</p>
+                    <p>Ksh 1000</p>
+                    <p>13kg</p>
+                    <a href="location"> <button type="button" class="btn btn-primary">Order Now</button></a>
+                </center>
+            </div>
+            <div class="col-md-3 doit"><img src="https://gobeba.com/wp-content/uploads/2019/03/afrigas-13kg-200x258.jpg"
+                    alt="">
+                <center>
+                    <p>Wabebe station Refill</p>
+                    <p>Ksh 1400</p>
+                    <p>6kg</p>
+                    <a href="location"> <button type="button" class="btn btn-primary">Order Now</button></a>
+                </center>
+            </div>
+
+            <div>
+
+
+            </div>
+
+{%endblock%}
