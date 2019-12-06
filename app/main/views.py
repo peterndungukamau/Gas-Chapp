@@ -1,9 +1,28 @@
-from . import main
-from flask import render_template,request,redirect,url_for,abort
+from flask import render_template,request,redirect,url_for,abort, flash
 from flask_login import login_required,current_user
 from ..models import Vendor
-from .forms import UpdateProfile
+from .forms import UpdateProfile, LocationForm
 from .. import db
+from . import main
+
+orders = [
+    {
+        'img' : 'img',
+        'vendor' : 'k-gas',
+        'location' : '3200',
+        'Price' : '3200',
+
+
+    },
+
+        {
+        'img' : 'img',
+        'vendor' : 'k-gas',
+        'location' : '3200',
+        'Price' : '3200',
+
+    }
+]
 
 @main.route('/')
 def index():
@@ -39,4 +58,20 @@ def update_profile(uname):
         return redirect(url_for('.profile',uname=user.username))
 
     return render_template('profile/update.html',form =form)
+  
+  @main.route('/order')
+def order():
+    title = 'Gas-Chapp'
+    return render_template('order.html', title=title, orders=orders)
+
+
+
+@main.route('/location',methods=['GET','POST'])
+def location():
+    form = LocationForm()
+    if form.validate_on_submit():
+        flash(f'Thanks for Buying The gas will be delivered to {form.location.data}!', 'success')
+        return redirect(url_for('main.order'))
+    return render_template('buy.html', form=form)
+  
 
