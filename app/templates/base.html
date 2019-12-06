@@ -1,15 +1,7 @@
-<!DOCTYPE html>
 {% extends 'bootstrap/base.html'%}
-
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+    {%block styles%}
+    {{super()}}
+    {%endblock%}
     <!-- Navbar block -->
     {% block navbar %}
     {% include 'navbar.html' %}
@@ -19,6 +11,4 @@
 
     {% block content %}
 
-    {% end block %}
-</body>
-</html>
+    {% endblock %}
